@@ -8,11 +8,16 @@ const userSlice = createSlice({
       return [...state, action.payload];
     },
     removeUser(state, action) {
-      state.splice(action.payload, 1);
+      return state.filter((user, id) => id !== action.payload);
     },
     clearAllUsers(state, action) {
       return [];
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(userSlice.actions.clearAllUsers, () => {
+      return [];
+    });
   },
 });
 
