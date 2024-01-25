@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { clearAllUsers } from "../store/slices/UserSlice";
+import { clearAllUsers } from "../store/actions";
 import { useDispatch } from "react-redux";
 
 const DeleteAllUser = () => {
